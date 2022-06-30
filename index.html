@@ -4,12 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+    <!-- HEADER: View high scores (on left) Time:__ (on right)-->
+    <header>
+        <div>
+        <a href="">View high scores</a>
+        </div>
+        <div>
+            <p>Time:<span id="timer">0</span></p>
+        </div>
+    </header>
+
+    <!--START SCREEN-->
+
     <!-- TITLE: Coding Quiz Challenge  -->
     <!-- PARAGRAPH: Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!-->
     <!-- BUTTON: Start Quiz-->
+    <section>
+        <h1>Coding Quiz Challenge</h1>
+        <div>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+        </div>
+        <button>Start Quiz</button>
+    </section>
+
+    <!-- QUESTION SCREEN-->
+
+    <section>
+        <h1>Question</h1>
+        <div class="answer-buttons">
+        <button>answer</button>
+        <button>answer</button>
+        <button>answer</button>
+        <button>answer</button>
+        </div>
+        <p class="answer-return">Correct, Incorrect</p>
+    </section>
 
     <!-- TITLE QUESTION: Commonly used data types DO Not Include:-->
     <!-- ANSWER 1: strings-->
@@ -44,5 +77,31 @@
     <!-- TITLE: All done!-->
     <!-- Your final score is (insert score)-->
     <!-- Enter intials: (box) (submit button)-->
+
+    <!-- SUBMISSION SCREEN-->
+    <section>
+        <h1>All Done!</h1>
+        <div>
+        <p>Your final score is <span id="final-score">0</span>.</p>
+        </div>
+        <form>
+        <label for="initials">Enter initials:</label>
+        <input type="text" name="initials" id="initials"/>
+        <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- HIGH SCORE SCREEN-->
+
+    <section>
+        <h1>High scores</h1>
+        <ol>
+            <li>High score 1</li>
+        </ol>
+        <button>Go back</button>
+        <button>Clear high scores</button>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
