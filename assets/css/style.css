@@ -13,6 +13,36 @@
 
 header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Start Screen */
+
+.start-screen {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.start-button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.start-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Question Screen */
+
+.question-screen {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 /* Answer Buttons */
@@ -23,9 +53,50 @@ header {
     background-color: var(--primary-color);
 }
 
+.answer-buttons button:hover {
+    background-color: var(--secondary-color);
+}
+
+.answer-return {
+    font-style: italic;
+    color: lightgray;
+}
+
 /* Final Score */
+
+.submission {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
 
 #final-score {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: var(--secondary-color);
+}
+
+.submission button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.submission button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* High Score Screen */
+
+.high-score {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}   
+
+.high-score button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.high-score button:hover {
+    background-color: var(--secondary-color);
 }
