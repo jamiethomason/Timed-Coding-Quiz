@@ -1,8 +1,54 @@
 
-// Question Arrays
-var questions = ['Commonly used data types DO Not Include:', 'The condition in an if / else statement is enclosed with _____.', 'Arrays in JavaScript can be used to store _____.', 'String values must be enclosed within _____ when being assigned to variables.', 'A very useful tool used during development and debugging for printing content to the debugger is:'];
-var answerSet1 = ['strings', 'booleans', 'alerts', 'numbers'];
-var answerSet2 = ['quotes', 'curly brackets', 'parenthesis', 'square brackets'];
-var answerSet3 = ['numbers and strings', 'other arrays', 'booleans', 'all of the above'];
-var answerSet4 = ['commas', 'curly brackets', 'quotes', 'parenthesis'];
-var answerSet5 = ['JavaScript', 'terminal/bash', 'for loops', 'console.log'];
+// Questions array
+var myQuestions = [
+    {
+      question: 'Commonly used data types DO Not Include:',
+      answers: {
+        a: "strings",
+        b: "booleans",
+        c: "alerts",
+        d: "numbers",
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: 'The condition in an if / else statement is enclosed with _____.',
+      answers: {
+        a: "quotes",
+        b: "curly brackets",
+        c: "parenthesis",
+        d: "square brackets",
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: 'Arrays in JavaScript can be used to store _____.',
+      answers: {
+        a: "numbers and strings",
+        b: "other arrays",
+        c: "booleans",
+        d: "all of the above",
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: 'String values must be enclosed within _____ when being assigned to variables.',
+      answers: {
+        a: "commas",
+        b: "curly brackets",
+        c: "quotes",
+        d: "parenthesis",
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+      answers: {
+        a: "JavaScript",
+        b: "terminal/bash",
+        c: "for loops",
+        d: "console.log",
+      },
+      correctAnswer: "d"
+    }
+  ];
