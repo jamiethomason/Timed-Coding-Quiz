@@ -1,13 +1,22 @@
+// Start Quiz (on click- go to question screen)
+var startButton = document.getElementsByClassName("start-button");
+startButton.addEventListener("click",firstQuestion());
 
-// Questions array
-var myQuestions = [
+//Start timer when question page is loaded
+
+var startTimer = document.getElementById("timer");
+startButton.addEventListener("click","timer");
+
+// Feed in questions to placeholder through arrays
+    // Questions array:
+var quizQuestions = [
     {
       question: 'Commonly used data types DO Not Include:',
       answers: {
-        a: "strings",
-        b: "booleans",
-        c: "alerts",
-        d: "numbers",
+        a: "1. strings",
+        b: "2. booleans",
+        c: "3. alerts",
+        d: "4. numbers",
       },
       correctAnswer: "d"
     },
@@ -51,4 +60,23 @@ var myQuestions = [
       },
       correctAnswer: "d"
     }
-  ];
+];
+
+function firstQuestion() {
+    var questionText=getElementsByClassName("question-text");
+    questionText.textContent=quizQuestions[0].question;
+}
+
+// Display correct/incorrect under question
+
+// Go to next question screen (on answer click)
+
+// Score quiz
+
+// Take off time for incorrect answers
+
+// End game when timer reaches 0
+
+// High Score List (save to local storage, pull from local storage)
+
+// Go back or view high scores on click (is this HTML or JS?)
