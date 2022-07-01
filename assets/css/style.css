@@ -53,6 +53,10 @@ header a {
 
 /* Question Screen */
 
+.hidden {
+    display: none;
+}
+
 .question-screen {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: left;
@@ -63,7 +67,7 @@ header a {
 
 /* Answer Buttons */
 
-.answer-buttons button {
+.answer-section button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
     background-color: var(--primary-color);
@@ -74,7 +78,7 @@ header a {
     margin-bottom: 5px;
 }
 
-.answer-buttons button:hover {
+.answer-section button:hover {
     background-color: var(--secondary-color);
 }
 

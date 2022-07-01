@@ -1,44 +1,42 @@
 // Start Quiz (on click- go to question screen)
-var startButton = document.getElementsByClassName("start-button");
-startButton.addEventListener("click",firstQuestion());
+var startButton = document.querySelector(".start-button");
+var currentQuestion = 0;
+var answerSection = document.querySelector(".answer-section");
 
 //Start timer when question page is loaded
-
-var startTimer = document.getElementById("timer");
-startButton.addEventListener("click","timer");
 
 // Feed in questions to placeholder through arrays
     // Questions array:
 var quizQuestions = [
     {
       question: 'Commonly used data types DO Not Include:',
-      answers: {
-        a: "1. strings",
-        b: "2. booleans",
-        c: "3. alerts",
-        d: "4. numbers",
-      },
-      correctAnswer: "d"
+      answers: [
+        "a: strings",
+        "b: booleans",
+        "c: alerts",
+        "d: numbers",
+        ],
+      correctAnswer: "3"
     },
     {
       question: 'The condition in an if / else statement is enclosed with _____.',
-      answers: {
-        a: "quotes",
-        b: "curly brackets",
-        c: "parenthesis",
-        d: "square brackets",
-      },
-      correctAnswer: "c"
+      answers: [
+        "a: quotes",
+        "b: curly brackets",
+        "c: parenthesis",
+        "d: square brackets",
+      ],
+      correctAnswer: "2"
     },
     {
       question: 'Arrays in JavaScript can be used to store _____.',
-      answers: {
-        a: "numbers and strings",
-        b: "other arrays",
-        c: "booleans",
-        d: "all of the above",
-      },
-      correctAnswer: "d"
+      answers: [
+        "a: numbers and strings",
+        "b: other arrays",
+        "c: booleans",
+        "d: all of the above",
+      ],
+      correctAnswer: "3"
     },
     {
       question: 'String values must be enclosed within _____ when being assigned to variables.',
@@ -62,10 +60,40 @@ var quizQuestions = [
     }
 ];
 
-function firstQuestion() {
-    var questionText=getElementsByClassName("question-text");
-    questionText.textContent=quizQuestions[0].question;
+var firstQuestion = function() {
+    var questionText = document.querySelector(".question-text");
+    questionText.textContent = quizQuestions[0].question;
+    for (let i = 0; i < quizQuestions[0].answers.length; i++) {
+        var answerButton = document.createElement("button");
+        answerButton.textContent = quizQuestions[0].answers[i];
+        answerButton.setAttribute("id", i);
+        answerSection.appendChild(answerButton);
+    }
+    startButton.setAttribute("class", "hidden")
 }
+
+var nextQuestion = function() {
+    var button1 = document.querySelector("#0");
+    var button2 = document.querySelector("#1");
+    var button3 = document.querySelector("#2");
+    var button4 = document.querySelector("#3");
+    button1.textContent = quizQuestions[currentQuestion].answers[0];
+    button2.textContent = quizQuestions[currentQuestion].answers[1];
+    button3.textContent = quizQuestions[currentQuestion].answers[2];
+    button4.textContent = quizQuestions[currentQuestion].answers[3];
+}
+
+var checkAnswer = function(event) {
+    var chosenAnswer = event.currentTarget.getAttribute("id");
+    if (chosenAnswer == quizQuestions[currentQuestion].correctAnswer) {
+        alert("Correct")
+    } else {alert("Incorrect")}
+    currentQuestion++
+    nextQuestion()
+}
+
+startButton.addEventListener("click", firstQuestion);
+answerSection.addEventListener("click", checkAnswer());
 
 // Display correct/incorrect under question
 
