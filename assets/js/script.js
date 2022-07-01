@@ -40,23 +40,23 @@ var quizQuestions = [
     },
     {
       question: 'String values must be enclosed within _____ when being assigned to variables.',
-      answers: {
-        a: "commas",
-        b: "curly brackets",
-        c: "quotes",
-        d: "parenthesis",
-      },
-      correctAnswer: "c"
+      answers: [
+        "a: commas",
+        "b: curly brackets",
+        "c: quotes",
+        "d: parenthesis",
+      ],
+      correctAnswer: "2"
     },
     {
       question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-      answers: {
-        a: "JavaScript",
-        b: "terminal/bash",
-        c: "for loops",
-        d: "console.log",
-      },
-      correctAnswer: "d"
+      answers: [
+        "a: JavaScript",
+        "b: terminal/bash",
+        "c: for loops",
+        "d: console.log",
+      ],
+      correctAnswer: "3"
     }
 ];
 
@@ -68,15 +68,16 @@ var firstQuestion = function() {
         answerButton.textContent = quizQuestions[0].answers[i];
         answerButton.setAttribute("id", i);
         answerSection.appendChild(answerButton);
+        answerButton.addEventListener("click", checkAnswer);
     }
     startButton.setAttribute("class", "hidden")
 }
 
 var nextQuestion = function() {
-    var button1 = document.querySelector("#0");
-    var button2 = document.querySelector("#1");
-    var button3 = document.querySelector("#2");
-    var button4 = document.querySelector("#3");
+    var button1 = document.getElementById("0");
+    var button2 = document.getElementById("1");
+    var button3 = document.getElementById("2");
+    var button4 = document.getElementById("3");
     button1.textContent = quizQuestions[currentQuestion].answers[0];
     button2.textContent = quizQuestions[currentQuestion].answers[1];
     button3.textContent = quizQuestions[currentQuestion].answers[2];
@@ -84,7 +85,7 @@ var nextQuestion = function() {
 }
 
 var checkAnswer = function(event) {
-    var chosenAnswer = event.currentTarget.getAttribute("id");
+    var chosenAnswer = this.getAttribute("id");
     if (chosenAnswer == quizQuestions[currentQuestion].correctAnswer) {
         alert("Correct")
     } else {alert("Incorrect")}
@@ -93,7 +94,6 @@ var checkAnswer = function(event) {
 }
 
 startButton.addEventListener("click", firstQuestion);
-answerSection.addEventListener("click", checkAnswer());
 
 // Display correct/incorrect under question
 
