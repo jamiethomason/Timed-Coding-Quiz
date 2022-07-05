@@ -2,6 +2,8 @@
 var startButton = document.querySelector(".start-button");
 var currentQuestion = 0;
 var answerSection = document.querySelector(".answer-section");
+var timeLeft = 60;
+var timerDiv = document.querySelector("#timer");
 
 //Start timer when question page is loaded
 
@@ -59,8 +61,37 @@ var quizQuestions = [
       correctAnswer: "3"
     }
 ];
+timerDiv.textContent = 'Time: '+ timeLeft;
+var countdown = function() {
+  timerDiv.textContent = 'Time: '+ timeLeft;
+  timeLeft--
+}
+
+var nextQuestion = function() {
+  var button1 = document.getElementById("0");
+  var button2 = document.getElementById("1");
+  var button3 = document.getElementById("2");
+  var button4 = document.getElementById("3");
+  button1.textContent = quizQuestions[currentQuestion].answers[0];
+  button2.textContent = quizQuestions[currentQuestion].answers[1];
+  button3.textContent = quizQuestions[currentQuestion].answers[2];
+  button4.textContent = quizQuestions[currentQuestion].answers[3];
+}
+
+var checkAnswer = function(event) {
+  var chosenAnswer = this.getAttribute("id");
+  if (chosenAnswer == quizQuestions[currentQuestion].correctAnswer) {
+      alert("Correct")
+  } else {
+    alert("Incorrect");
+    timeLeft - 10;
+  }
+  currentQuestion++
+  nextQuestion()
+}
 
 var firstQuestion = function() {
+    setInterval(countdown,1000);
     var questionText = document.querySelector(".question-text");
     questionText.textContent = quizQuestions[0].question;
     for (let i = 0; i < quizQuestions[0].answers.length; i++) {
@@ -71,26 +102,6 @@ var firstQuestion = function() {
         answerButton.addEventListener("click", checkAnswer);
     }
     startButton.setAttribute("class", "hidden")
-}
-
-var nextQuestion = function() {
-    var button1 = document.getElementById("0");
-    var button2 = document.getElementById("1");
-    var button3 = document.getElementById("2");
-    var button4 = document.getElementById("3");
-    button1.textContent = quizQuestions[currentQuestion].answers[0];
-    button2.textContent = quizQuestions[currentQuestion].answers[1];
-    button3.textContent = quizQuestions[currentQuestion].answers[2];
-    button4.textContent = quizQuestions[currentQuestion].answers[3];
-}
-
-var checkAnswer = function(event) {
-    var chosenAnswer = this.getAttribute("id");
-    if (chosenAnswer == quizQuestions[currentQuestion].correctAnswer) {
-        alert("Correct")
-    } else {alert("Incorrect")}
-    currentQuestion++
-    nextQuestion()
 }
 
 startButton.addEventListener("click", firstQuestion);
